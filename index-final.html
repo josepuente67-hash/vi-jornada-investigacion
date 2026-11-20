@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="UTF-8">
+<title>VI Jornada de Investigación y Postgrado | UPEL–IMPM</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;color:#1f2937;background:#f2fbf7}
+.bar{position:sticky;top:0;z-index:9;display:flex;align-items:center;gap:10px;background:#0b1f30;color:#fff;padding:8px 14px}
+.dot{width:11px;height:11px;border-radius:50%;background:#ff4438;animation:p 1.6s infinite;flex:0 0 auto}
+@keyframes p{0%{box-shadow:0 0 0 0 rgba(255,68,56,.5)}70%{box-shadow:0 0 0 10px rgba(255,68,56,0)}100%{box-shadow:0 0 0 0 rgba(255,68,56,0)}}
+.clk{margin-left:auto;font-size:.85rem;color:#9fdcc8}
+.bar a{background:#d62017;color:#fff;text-decoration:none;font-weight:700;padding:6px 14px;border-radius:99px;font-size:.85rem;white-space:nowrap}
+.bwrap{position:relative;max-width:1000px;margin:18px auto 0;width:calc(100% - 20px)}
+.banner{display:block;width:100%;border-radius:14px;box-shadow:0 12px 30px rgba(10,60,50,.25);min-height:60px;background:#12897f}
+.pick{position:absolute;top:10px;right:10px;background:rgba(11,31,48,.75);color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:99px;padding:7px 14px;font-size:.8rem;font-weight:700;cursor:pointer;margin-left:8px}
+.pick:hover{background:rgba(11,31,48,.95)}
+.fb{display:none;background:linear-gradient(95deg,#0d6e7e,#23a06b 65%,#45b54c);border-radius:14px;padding:26px 18px;text-align:center;color:#fff}
+.fb .l1{font-size:.72rem;font-weight:700;letter-spacing:2px}
+.fb .l2{font-size:.85rem;font-weight:800;text-transform:uppercase;margin-top:2px}
+.fb h1{margin-top:8px;font-size:1.4rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px}
+.live{max-width:1000px;margin:22px auto;width:calc(100% - 20px);background:#fff;border:1px solid #d9efe6;border-left:6px solid #d62017;border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.live h2{font-size:1.1rem;color:#0f2f4d}
+.live p{color:#52616e;font-size:.92rem;margin-top:3px;flex:1 1 260px}
+.btn{background:linear-gradient(180deg,#ff433d,#d62017);color:#fff;font-weight:800;padding:12px 20px;border-radius:12px;text-decoration:none;white-space:nowrap;box-shadow:0 6px 16px rgba(214,32,23,.35)}
+main{max-width:840px;margin:26px auto 40px;width:calc(100% - 20px);background:rgba(255,255,255,.96);border:1px solid #dcf0e7;border-radius:18px;padding:26px 22px;box-shadow:0 12px 30px rgba(15,70,55,.1)}
+main h2{text-align:center;letter-spacing:6px;text-transform:uppercase;color:#0f2f4d;font-size:1.3rem}
+.sub{text-align:center;color:#0d6e7e;font-weight:800;text-transform:uppercase;font-size:.95rem;margin-top:4px;letter-spacing:1px;padding-bottom:14px;border-bottom:3px solid #22c55e;width:280px;margin-left:auto;margin-right:auto;border-radius:3px}
+ol{list-style:none;margin-top:8px}
+li{display:grid;grid-template-columns:86px 1fr;gap:12px;padding:12px 10px;border-top:1px solid #edf5f0;position:relative}
+li:first-child{border-top:none}
+li b{color:#0f2f4d;text-align:right;font-size:1rem}
+li b small{font-size:.68em;color:#3f6ea5}
+li h3{font-size:.98rem;color:#0f2f4d;display:inline}
+li p{color:#52616e;font-size:.9rem;margin-top:2px}
+.bdg{font-size:.56rem;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:2px 7px;border-radius:99px;margin-left:6px;vertical-align:middle;position:relative;top:-2px}
+.vr{background:#e0f2fe;color:#075985}.pr{background:#dcfce7;color:#166534}.ce{background:#ede9fe;color:#5b21b6}.rs{background:#f1f5f9;color:#475569}.po{background:#fce7f3;color:#9d174d}.cu{background:#fef3c7;color:#92400e}.li2{background:#ccfbf1;color:#0f766e}
+.chip{display:none;position:absolute;right:10px;top:10px;font-size:.6rem;font-weight:800;padding:3px 9px;border-radius:99px}
+.is-now{background:#fff4f3}.is-now .cn{display:block;background:#d62017;color:#fff}
+.is-next{background:#fffbeb}.is-next .cx{display:block;background:#f59e0b;color:#422006}
+.note{margin-top:16px;text-align:center;font-size:.8rem;color:#64748b;border-top:1px dashed #dbeee6;padding-top:12px}
+.note a{color:#0f766e;font-weight:700}
+footer{background:#0b1f30;color:#bcd9cf;padding:18px;text-align:center;font-size:.85rem}
+footer a{color:#6fe3bd;font-weight:700}
+@media(max-width:640px){li{grid-template-columns:66px 1fr;gap:8px}.clk{display:none}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <span class="dot"></span>
+  <span><strong>EN VIVO</strong> · Todo el programa se transmite por YouTube</span>
+  <span class="clk" id="clk">08:55 p. m.</span>
+  <a href="https://youtube.com/@jornadapostgradoupel?si=2paVBv9F23DT7__R" target="_blank">Ver ahora ▸</a>
+</div>
+
+<!-- ENCABEZADO -->
+<div class="bwrap">
+  <img id="banner" class="banner" alt="Encabezado oficial UPEL - IMPM" src="file:///C:/Users/Dell%20Precision%207730/Downloads/banner.jpg">
+  <div id="fallback" class="fb">
+    <p class="l1">REPÚBLICA BOLIVARIANA DE VENEZUELA</p>
+    <p class="l2">Universidad Pedagógica Experimental Libertador</p>
+    <p class="l2">Instituto de Mejoramiento Profesional del Magisterio</p>
+    <p class="l2">Extensión Académica Valencia</p>
+    <h1>VI Jornada de Investigación y Postgrado</h1>
+  </div>
+  </div>
+
+<section class="live">
+  <div>
+    <h2>📡 Transmisión en vivo por YouTube</h2>
+    <p>Todo el programa se transmitirá por el canal oficial <strong>@jornadapostgradoupel</strong>. Activa la campanita para recibir el aviso al inicio de cada actividad.</p>
+  </div>
+  <a class="btn" href="https://youtube.com/@jornadapostgradoupel?si=2paVBv9F23DT7__R" target="_blank">▶ Ver transmisión en vivo</a>
+</section>
+
+<main>
+  <h2>Programa</h2>
+  <p class="sub">VI Jornada de Investigación y Postgrado</p>
+
+  <ol id="prog">
+    <li data-s="480" data-e="490" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>08:00 <small>am</small></b>
+      <div><h3>Himno Nacional / Himno UPEL</h3><span class="bdg ce">Ceremonia</span><p>A cargo de la Mg. Rebeca Rodríguez.</p></div></li>
+    <li data-s="490" data-e="505" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>08:10 <small>am</small></b>
+      <div><h3>Palabras de Bienvenida</h3><span class="bdg ce">Ceremonia</span><p>Mg. Karelys Mujica, Coordinadora Local de Investigación y Postgrado UPEL/IMPM.</p></div></li>
+    <li data-s="505" data-e="520" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>08:25 <small>am</small></b>
+      <div><h3>Palabras de Apertura</h3><span class="bdg ce">Ceremonia</span><p>Dra. Sonia Mora, Jefe de la Extensión Académica Valencia UPEL/IMPM.</p></div></li>
+    <li data-s="520" data-e="540" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>08:40 <small>am</small></b>
+      <div><h3>Instalación de la VI Jornada</h3><span class="bdg ce">Ceremonia</span><p>Dra. Moraima Esteves, Vicerrectora de Investigación y Postgrado UPEL.</p></div></li>
+    <li data-s="540" data-e="585" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>09:00 <small>am</small></b>
+      <div><h3>Conferencia Virtual: Dr. Aristóbulo Cáceres</h3><span class="bdg vr">Virtual</span></div></li>
+    <li data-s="585" data-e="620" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>09:45 <small>am</small></b>
+      <div><h3>Conferencia Virtual: Dr. José Rojas</h3><span class="bdg vr">Virtual</span></div></li>
+    <li data-s="620" data-e="630" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>10:20 <small>am</small></b>
+      <div><h3>Pausa Activa y Receso</h3><span class="bdg rs">Receso</span></div></li>
+    <li data-s="630" data-e="675" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>10:30 <small>am</small></b>
+      <div><h3>Conferencia Presencial: Dra. Themis Sandoval</h3><span class="bdg pr">Presencial</span></div></li>
+    <li data-s="675" data-e="720" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>11:15 <small>am</small></b>
+      <div><h3>Conferencia Presencial: Dra. Sonia Mora</h3><span class="bdg pr">Presencial</span></div></li>
+    <li data-s="720" data-e="735" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>12:00 <small>m</small></b>
+      <div><h3>Bautizo y Presentación del Libro</h3><span class="bdg li2">Presentación</span><p>"De lo Social a lo Virtual".</p></div></li>
+    <li data-s="735" data-e="795" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>12:15 <small>pm</small></b>
+      <div><h3>Receso de Almuerzo</h3><span class="bdg rs">Receso</span></div></li>
+    <li data-s="795" data-e="805" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>01:15 <small>pm</small></b>
+      <div><h3>Apertura de Presentaciones de Póster</h3><span class="bdg po">Pósters</span><p>Mg. Karelys Mujica.</p></div></li>
+    <li data-s="805" data-e="915" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>01:25 <small>pm</small></b>
+      <div><h3>Exhibición y Presentación de Pósters</h3><span class="bdg po">Pósters</span><p>(Acompañamiento de los Expertos).</p></div></li>
+    <li data-s="915" data-e="930" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>03:15 <small>pm</small></b>
+      <div><h3>Cierre Cultural</h3><span class="bdg cu">Cultural</span><p>Mg. Rebeca Rodríguez (Músico).</p></div></li>
+    <li data-s="930" data-e="950" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>03:30 <small>pm</small></b>
+      <div><h3>Entrega de Reconocimientos</h3><span class="bdg ce">Ceremonia</span><p>(Anfitrionas).</p></div></li>
+    <li data-s="950" data-e="995" class=""><span class="chip cn">● En curso</span><span class="chip cx">Próxima</span>
+      <b>03:50 <small>pm</small></b>
+      <div><h3>Palabras de Clausura</h3><span class="bdg ce">Ceremonia</span><p>Dra. Maira Vallenilla, Coordinadora Institucional de Doctorado.</p></div></li>
+  </ol>
+
+  <p class="note">Horario sujeto a ajustes según el desarrollo del evento · Sigue la transmisión en
+  <a href="https://youtube.com/@jornadapostgradoupel?si=2paVBv9F23DT7__R" target="_blank">@jornadapostgradoupel</a></p>
+</main>
+
+<footer>
+  UPEL · IMPM — Extensión Académica Valencia<br>
+  <a href="https://youtube.com/@jornadapostgradoupel?si=2paVBv9F23DT7__R" target="_blank">▶ youtube.com/@jornadapostgradoupel</a><br><br>
+  VI Jornada de Investigación y Postgrado · Transmisión en vivo por YouTube
+</footer>
+
+/* ===== RELOJ Y ACTIVIDAD EN CURSO ===== */
+(function(){
+  var clk=document.getElementById('clk');
+  var its=Array.prototype.slice.call(document.querySelectorAll('#prog li'));
+  function min(){
+    var d=new Date();
+    try{
+      var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Caracas',hour:'numeric',minute:'2-digit',hour12:false}).formatToParts(d);
+      var h=+p.find(function(x){return x.type=='hour'}).value, m=+p.find(function(x){return x.type=='minute'}).value;
+      if(h==24)h=0; return h*60+m;
+    }catch(e){return d.getHours()*60+d.getMinutes();}
+  }
+  function tick(){
+    try{clk.textContent=new Intl.DateTimeFormat('es-VE',{timeZone:'America/Caracas',hour:'2-digit',minute:'2-digit',hour12:true}).format(new Date());}catch(e){}
+    var t=min(),n=-1,x=-1;
+    its.forEach(function(el,i){var s=+el.getAttribute('data-s'),e=+el.getAttribute('data-e');
+      if(t>=s&&t<e)n=i; else if(t<s&&x==-1)x=i;});
+    its.forEach(function(el,i){el.className=(i==n?'is-now':(i==x?'is-next':''));});
+  }
+  tick();setInterval(tick,1000);
+})();
+</script>
+
+</body></html>
